@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -12,31 +12,22 @@
 <style>
   :root{
     --bg:#0a1712;
-    --bg-deep:#06120d;
-    --card:#0f241c;
-    --border:rgba(245,181,68,.20);
-    --amber:#f5b544;
-    --amber-2:#d99a2b;
-    --gold-1:#f7d488;
-    --gold-2:#e0a83a;
-    --muted:#7a8c82;
-    --text:#d4e0db;
+    --muted:#a7bdb3;
   }
   *{-webkit-tap-highlight-color:transparent}
-  html{scroll-behavior:smooth; scroll-padding-top:80px}
+  html{scroll-behavior:smooth; scroll-padding-top:96px}
   body{
     background:var(--bg);
-    color:var(--text);
+    color:#d4e0db;
     font-family:'Inter',system-ui,-apple-system,sans-serif;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
 
-  /* Фоновые эффекты */
   .bg-grid{
     position:fixed; inset:0; z-index:-2;
     background-image:
-      radial-gradient(1100px 620px at 50% -12%, rgba(245,181,68,.12), transparent 62%),
+      radial-gradient(1100px 620px at 50% -12%, rgba(245,158,11,.13), transparent 62%),
       radial-gradient(800px 500px at 85% 80%, rgba(15,36,28,.6), transparent 60%),
       linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
@@ -47,83 +38,65 @@
   .bg-glow{
     position:fixed; z-index:-1; pointer-events:none;
     width:520px; height:520px; border-radius:50%;
-    background:radial-gradient(circle, rgba(245,181,68,.14), transparent 65%);
+    background:radial-gradient(circle, rgba(245,158,11,.13), transparent 65%);
     filter:blur(60px);
   }
   .glow-1{top:-180px; left:50%; transform:translateX(-50%)}
   .glow-2{bottom:8%; right:-200px; opacity:.4}
 
-  /* Стеклянная шапка */
-  .glass{
-    background:rgba(10,23,18,.72);
-    backdrop-filter:blur(16px) saturate(160%);
-    -webkit-backdrop-filter:blur(16px) saturate(160%);
-    border-bottom:1px solid var(--border);
-  }
-
-  /* Карточки */
   .card{
     background:linear-gradient(160deg, rgba(15,36,28,.8), rgba(15,36,28,.3));
-    border:1px solid var(--border);
+    border:1px solid rgba(245,158,11,.2);
     border-radius:20px;
     transition:transform .35s cubic-bezier(.2,.7,.3,1), border-color .35s, box-shadow .35s;
   }
   .card:hover{
     transform:translateY(-4px);
-    border-color:rgba(245,181,68,.42);
-    box-shadow:0 18px 40px -22px rgba(245,181,68,.35);
+    border-color:rgba(251,191,36,.45);
+    box-shadow:0 18px 40px -22px rgba(251,191,36,.35);
   }
 
-  /* Тексты */
   .grad-text{
-    background:linear-gradient(120deg,var(--gold-1),var(--gold-2) 55%,#f5b544);
-    -webkit-background-clip:text; background-clip:text; color:transparent;
-  }
-  .logo-text{
-    background:linear-gradient(135deg,var(--gold-1),var(--amber-2));
+    background:linear-gradient(120deg,#fcd34d,#f59e0b 55%,#fbbf24);
     -webkit-background-clip:text; background-clip:text; color:transparent;
   }
 
-  /* Кнопки */
   .btn-gold{
-    background:linear-gradient(135deg,var(--gold-1),var(--gold-2));
-    color:#0a1712; font-weight:600;
-    box-shadow:0 12px 30px -14px rgba(224,168,58,.7);
+    background:linear-gradient(135deg,#fcd34d,#f59e0b);
+    color:#07130e; font-weight:600;
+    box-shadow:0 12px 30px -14px rgba(251,191,36,.65);
     transition:transform .25s, box-shadow .25s, filter .25s;
   }
-  .btn-gold:hover{transform:translateY(-2px); filter:brightness(1.05); box-shadow:0 18px 38px -14px rgba(224,168,58,.85)}
+  .btn-gold:hover{transform:translateY(-2px); filter:brightness(1.05); box-shadow:0 18px 38px -14px rgba(251,191,36,.8)}
   .btn-gold:active{transform:translateY(0) scale(.985)}
 
   .btn-outline-gold{
-    border:1px solid rgba(245,181,68,.4); background:rgba(245,181,68,.08);
-    color:#f5b544; font-weight:500;
+    border:1px solid #fbbf24; background:rgba(251,191,36,.08);
+    color:#fcd34d; font-weight:600;
     transition:background .25s, color .25s, transform .25s, border-color .25s;
   }
-  .btn-outline-gold:hover{background:rgba(245,181,68,1); color:#0a1712; border-color:rgba(245,181,68,1); transform:translateY(-2px)}
+  .btn-outline-gold:hover{background:#fbbf24; color:#07130e; transform:translateY(-2px)}
   .btn-outline-gold:active{transform:translateY(0) scale(.985)}
 
   .btn-ghost{
-    border:1px solid var(--border); background:rgba(255,255,255,.03);
+    border:1px solid rgba(245,158,11,.25); background:rgba(255,255,255,.04);
     transition:border-color .25s, background .25s, transform .25s;
   }
-  .btn-ghost:hover{border-color:rgba(245,181,68,.45); background:rgba(245,181,68,.07); transform:translateY(-2px)}
+  .btn-ghost:hover{border-color:rgba(251,191,36,.5); background:rgba(251,191,36,.1); transform:translateY(-2px)}
 
-  /* Бейджи */
   .chip{
-    display:inline-flex; align-items:center; gap:.4rem;
-    border:1px solid var(--border); background:rgba(255,255,255,.035);
-    border-radius:999px; padding:.3rem .7rem; font-size:.72rem; color:var(--muted);
+    display:inline-flex; align-items:center; gap:.45rem;
+    border:1px solid rgba(245,158,11,.2); background:rgba(6,18,13,.6);
+    border-radius:999px; padding:.35rem .8rem; font-size:.75rem; color:#c3d4cd;
   }
   .badge-hit{
     display:inline-flex; align-items:center;
-    background:linear-gradient(90deg,#f5b544,#e0a83a); color:#0a1712;
-    border-radius:999px; padding:.15rem .6rem; font-size:.65rem; font-weight:700; letter-spacing:.04em;
+    background:linear-gradient(90deg,#fbbf24,#f59e0b); color:#07130e;
+    border-radius:999px; padding:.15rem .6rem; font-size:.62rem; font-weight:800; letter-spacing:.05em;
   }
 
-  /* Разделитель */
-  .price-line{height:1px; background:linear-gradient(90deg, transparent, var(--border) 15%, var(--border) 85%, transparent)}
+  .price-line{height:1px; background:linear-gradient(90deg, transparent, rgba(245,158,11,.2) 15%, rgba(245,158,11,.2) 85%, transparent)}
 
-  /* Анимации */
   .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1)}
   .reveal.in{opacity:1; transform:none}
   .shine{position:relative; overflow:hidden}
@@ -138,33 +111,25 @@
   @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
   .float{animation:float 5.5s ease-in-out infinite}
 
-  /* Навигация */
   .nav-link{
-    position:relative; font-size:13.5px; color:var(--muted);
+    position:relative; font-size:13.5px; color:#c3d4cd;
     transition:color .25s ease; padding:.25rem 0;
   }
   .nav-link::after{
     content:""; position:absolute; left:0; bottom:0; height:1.5px; width:0;
-    background:linear-gradient(90deg,var(--gold-1),var(--gold-2));
+    background:linear-gradient(90deg,#fcd34d,#f59e0b);
     transition:width .3s ease;
   }
-  .nav-link:hover{color:var(--text)}
+  .nav-link:hover{color:#fcd34d}
   .nav-link:hover::after{width:100%}
 
-  /* Карта */
   .map-frame{
-    border:1px solid var(--border); border-radius:20px; overflow:hidden;
+    border:1px solid rgba(245,158,11,.2); border-radius:20px; overflow:hidden;
     background:linear-gradient(160deg, rgba(15,36,28,.5), rgba(15,36,28,.1));
   }
 
-  /* Зачёркивание старой цены */
-  .price-old{text-decoration:line-through; color:var(--muted); font-size:.85em}
-
-  /* Логотип-шестиугольник */
-  .hex-logo{
-    position:relative; width:40px; height:40px;
-  }
-  .hex-logo svg{width:100%; height:100%}
+  /* Зачёркнутая старая цена */
+  .price-old{text-decoration:line-through; color:rgba(52,211,153,.6); font-size:.85em; font-weight:500}
 
   @media (prefers-reduced-motion:reduce){
     *{animation:none!important; transition:none!important}
@@ -179,57 +144,50 @@
 <div class="bg-glow glow-2"></div>
 
 <!-- ================= ШАПКА ================= -->
-<header class="glass sticky top-0 z-50">
-  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-    <div class="h-16 md:h-[72px] flex items-center justify-between">
+<header class="sticky top-0 z-50 backdrop-blur-md bg-[#07130e]/90 border-b border-amber-500/15">
+  <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between gap-4">
 
-      <!-- Логотип -->
-      <a href="#hero" class="flex items-center gap-2.5 shrink-0">
-        <div class="hex-logo">
-          <svg viewBox="0 0 48 48" fill="none">
-            <path d="M24 3L42 13.5V34.5L24 45L6 34.5V13.5L24 3Z" stroke="url(#hex-g)" stroke-width="1.8" stroke-linejoin="round"/>
-            <path d="M24 16L30 24L24 32L18 24L24 16Z" fill="url(#hex-g2)" opacity="0.85"/>
-            <path d="M24 16L30 24L24 32L18 24L24 16Z" stroke="url(#hex-g)" stroke-width="1" stroke-linejoin="round" opacity="0.5"/>
-            <defs>
-              <linearGradient id="hex-g" x1="6" y1="3" x2="42" y2="45">
-                <stop offset="0" stop-color="#f7d488"/><stop offset="1" stop-color="#d99a2b"/>
-              </linearGradient>
-              <linearGradient id="hex-g2" x1="18" y1="16" x2="30" y2="32">
-                <stop offset="0" stop-color="#f7d488"/><stop offset="1" stop-color="#e0a83a"/>
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-        <span class="leading-none">
-          <span class="block text-[15px] font-extrabold tracking-[.14em] logo-text">LASER ONE</span>
-          <span class="block text-[9px] tracking-[.3em] text-[#7a8c82] mt-0.5">we care for you</span>
-        </span>
-      </a>
-
-      <!-- Навигация: только десктоп -->
-      <nav class="hidden md:flex items-center gap-7 absolute left-1/2 -translate-x-1/2">
-        <a href="#lpg" class="nav-link">LPG</a>
-        <a href="#laser" class="nav-link">Лазер</a>
-        <a href="#why" class="nav-link">О студии</a>
-        <a href="#contacts" class="nav-link">Контакты</a>
-      </nav>
-
-      <!-- Правая часть -->
-      <div class="flex items-center gap-2.5 shrink-0">
-        <!-- Адрес: только десктоп -->
-        <span class="hidden lg:flex items-center gap-2 text-[12.5px] text-[#7a8c82]">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#f5b544" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          Брянск, ул. Красноармейская, 41
-        </span>
-        <!-- Кнопка записи: контурная золотая -->
-        <a href="https://wa.me/74832331617" target="_blank" rel="noopener"
-           class="btn-outline-gold text-[12px] md:text-[13px] px-3.5 md:px-5 py-2 md:py-2.5 rounded-xl whitespace-nowrap">Онлайн-запись</a>
+    <!-- Логотип слева -->
+    <div class="flex items-center gap-3 shrink-0">
+      <svg class="w-10 h-10 shrink-0" viewBox="0 0 100 100" fill="none">
+        <polygon points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5" stroke="#f59e0b" stroke-width="3" fill="#0d241a"/>
+        <polygon points="50,22 75,37 75,63 50,78 25,63 25,37" stroke="#fbbf24" stroke-width="2" fill="none"/>
+        <line x1="50" y1="5" x2="50" y2="22" stroke="#f59e0b" stroke-width="3"/>
+        <line x1="90" y1="27.5" x2="75" y2="37" stroke="#f59e0b" stroke-width="3"/>
+        <line x1="90" y1="72.5" x2="75" y2="63" stroke="#f59e0b" stroke-width="3"/>
+        <line x1="50" y1="95" x2="50" y2="78" stroke="#f59e0b" stroke-width="3"/>
+        <line x1="10" y1="72.5" x2="25" y2="63" stroke="#f59e0b" stroke-width="3"/>
+        <line x1="10" y1="27.5" x2="25" y2="37" stroke="#f59e0b" stroke-width="3"/>
+      </svg>
+      <div class="flex flex-col">
+        <span class="text-xl font-bold tracking-widest grad-text uppercase">LASER ONE</span>
+        <span class="text-[10px] tracking-wider text-emerald-300/90 -mt-0.5">we care for you</span>
       </div>
+    </div>
+
+    <!-- Навигация по центру (только десктоп) -->
+    <nav class="hidden lg:flex items-center gap-6 text-sm font-medium">
+      <a href="#lpg" class="nav-link">LPG-массаж</a>
+      <a href="#laser" class="nav-link">Лазерная эпиляция</a>
+      <a href="#about" class="nav-link">О студии</a>
+      <a href="#contacts" class="nav-link">Контакты</a>
+    </nav>
+
+    <!-- Блок справа: Адрес и кнопка записи -->
+    <div class="flex items-center gap-4 shrink-0">
+      <div class="hidden xl:flex items-center gap-2 text-xs text-emerald-100/90 bg-emerald-950/60 px-3 py-1.5 rounded-full border border-emerald-500/20">
+        <svg class="w-3.5 h-3.5 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <span>ул. Красноармейская, 41</span>
+      </div>
+      <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
+         class="px-5 py-2.5 rounded-full border border-amber-400 text-amber-300 font-semibold text-xs tracking-wider uppercase hover:bg-amber-400 hover:text-emerald-950 transition-all duration-200 shadow-[0_0_15px_rgba(251,191,36,0.15)] whitespace-nowrap">
+        Онлайн-запись
+      </a>
     </div>
   </div>
 </header>
 
-<main class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
   <!-- ================= HERO ================= -->
   <section id="hero" class="pt-10 md:pt-20 pb-12 md:pb-20 text-center">
@@ -239,174 +197,207 @@
       Коррекция фигуры и<br class="hidden sm:block"> <span class="grad-text">лазерная эпиляция</span> в Брянске
     </h1>
 
-    <p class="mt-4 md:mt-6 text-[14px] md:text-[17px] leading-relaxed text-[#7a8c82] max-w-2xl mx-auto">
+    <p class="mt-4 md:mt-6 text-[15px] md:text-[17px] leading-relaxed text-slate-200 max-w-2xl mx-auto">
       Оригинальные аппараты LPG, видимый результат уже после первых сеансов
       и бережная забота о вашей фигуре.
     </p>
 
     <div class="mt-7 md:mt-9 flex flex-col gap-3 max-w-md mx-auto">
-      <a href="https://wa.me/74832331617?text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B1%D0%BD%D1%8B%D0%B9%20%D1%81%D0%B5%D0%B0%D0%BD%D1%81%20LPG" target="_blank" rel="noopener"
+      <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
          class="btn-gold shine rounded-2xl py-4 text-[14px] md:text-[15px] font-semibold tracking-wide">
-        Записаться на пробный сеанс LPG за 900 ₽
+        Записаться на сеанс LPG за 900 ₽
       </a>
-      <a href="https://wa.me/74832331617" target="_blank" rel="noopener"
-         class="btn-ghost rounded-2xl py-3.5 text-[14px] font-medium text-[#d4e0db]">
-        Написать в WhatsApp
+      <a href="tel:+74832331617"
+         class="btn-ghost rounded-2xl py-4 text-[14px] md:text-[15px] font-medium text-slate-100 flex items-center justify-center">
+        Позвонить в студию
+        <span class="ml-2 text-amber-300 font-semibold">+7 (4832) 33-16-17</span>
       </a>
     </div>
 
     <div class="mt-6 chip justify-center">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#f5b544" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
       г. Брянск, ул. Красноармейская, 41
     </div>
   </section>
 
   <!-- ================= АКЦИИ И АБОНЕМЕНТЫ LPG ================= -->
   <section id="lpg" class="py-6 md:py-12">
-    <h2 class="text-[11px] font-semibold tracking-[.28em] text-[#7a8c82] text-center">АКЦИИ И АБОНЕМЕНТЫ LPG</h2>
-    <p class="mt-3 text-center text-[13.5px] text-[#7a8c82]">Выгодные пакеты сеансов на оригинальном аппарате LPG</p>
+    <h2 class="text-[11px] font-semibold tracking-[.28em] text-amber-300 text-center">АКЦИИ И АБОНЕМЕНТЫ LPG</h2>
+    <p class="mt-3 text-center text-[14px] text-slate-200">Выгодные пакеты сеансов на оригинальном аппарате LPG</p>
 
-    <div class="mt-6 md:mt-10 grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+    <div class="mt-6 md:mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
 
       <!-- 10 сеансов -->
-      <article class="card p-5 md:p-6 relative">
-        <div class="absolute top-4 right-4"><span class="badge-hit">ХИТ</span></div>
-        <h3 class="text-[16.5px] font-semibold pr-16">10 сеансов LPG-массажа</h3>
-        <p class="mt-1.5 text-[12.5px] text-[#7a8c82]">Полный курс коррекции фигуры для стойкого результата.</p>
+      <article class="card p-5 md:p-6 relative flex flex-col">
+        <div class="absolute top-5 right-5"><span class="badge-hit">ХИТ</span></div>
+        <h3 class="text-[17px] font-semibold pr-20 text-white">10 сеансов LPG-массажа</h3>
+        <p class="mt-2 text-[13px] leading-relaxed text-emerald-100/90">Полный курс коррекции фигуры для стойкого результата.</p>
         <div class="price-line my-4"></div>
         <div class="flex items-baseline gap-3">
-          <span class="text-[22px] font-bold text-white">9 000 ₽</span>
+          <span class="text-[24px] font-bold text-white">9 000 ₽</span>
           <span class="price-old">14 000 ₽</span>
         </div>
+        <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
+           class="mt-5 btn-outline-gold w-full rounded-xl py-3 text-center text-[13px] uppercase tracking-wider">
+          Записаться
+        </a>
       </article>
 
       <!-- 5 сеансов -->
-      <article class="card p-5 md:p-6">
-        <h3 class="text-[16.5px] font-semibold">5 сеансов LPG-массажа</h3>
-        <p class="mt-1.5 text-[12.5px] text-[#7a8c82]">Оптимальный пакет для заметного лифтинг-эффекта.</p>
+      <article class="card p-5 md:p-6 flex flex-col">
+        <h3 class="text-[17px] font-semibold text-white">5 сеансов LPG-массажа</h3>
+        <p class="mt-2 text-[13px] leading-relaxed text-emerald-100/90">Оптимальный пакет для заметного лифтинг-эффекта.</p>
         <div class="price-line my-4"></div>
         <div class="flex items-baseline gap-3">
-          <span class="text-[22px] font-bold text-white">5 000 ₽</span>
+          <span class="text-[24px] font-bold text-white">5 000 ₽</span>
           <span class="price-old">7 000 ₽</span>
         </div>
+        <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
+           class="mt-5 btn-outline-gold w-full rounded-xl py-3 text-center text-[13px] uppercase tracking-wider">
+          Записаться
+        </a>
       </article>
 
       <!-- Пробный сеанс -->
-      <article class="card p-5 md:p-6">
-        <h3 class="text-[16.5px] font-semibold">Пробный сеанс LPG-массажа</h3>
-        <p class="mt-1.5 text-[12.5px] text-[#7a8c82]">Попробуйте эффект LPG на себе — первая процедура со скидкой.</p>
+      <article class="card p-5 md:p-6 flex flex-col">
+        <h3 class="text-[17px] font-semibold text-white">Пробный сеанс LPG-массажа</h3>
+        <p class="mt-2 text-[13px] leading-relaxed text-emerald-100/90">Попробуйте эффект LPG на себе — первая процедура со скидкой.</p>
         <div class="price-line my-4"></div>
         <div class="flex items-baseline gap-3">
-          <span class="text-[22px] font-bold text-white">900 ₽</span>
+          <span class="text-[24px] font-bold text-white">900 ₽</span>
           <span class="price-old">1 400 ₽</span>
         </div>
+        <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
+           class="mt-5 btn-gold w-full rounded-xl py-3 text-center text-[13px] uppercase tracking-wider">
+          Записаться
+        </a>
       </article>
 
       <!-- Комплекс "Убийца жира" -->
-      <article class="card p-5 md:p-6">
-        <h3 class="text-[16.5px] font-semibold">Комплекс «Убийца жира»</h3>
-        <p class="mt-1.5 text-[12.5px] text-[#7a8c82]">LPG-массаж + УЗ-кавитация — двойной удар по жировым отложениям.</p>
+      <article class="card p-5 md:p-6 flex flex-col">
+        <h3 class="text-[17px] font-semibold text-white">Комплекс «Убийца жира»</h3>
+        <p class="mt-2 text-[13px] leading-relaxed text-emerald-100/90">LPG-массаж + УЗ-кавитация — двойной удар по жировым отложениям.</p>
         <div class="price-line my-4"></div>
         <div class="flex items-baseline gap-3">
-          <span class="text-[22px] font-bold text-white">1 600 ₽</span>
+          <span class="text-[24px] font-bold text-white">1 600 ₽</span>
           <span class="price-old">3 200 ₽</span>
         </div>
+        <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
+           class="mt-5 btn-outline-gold w-full rounded-xl py-3 text-center text-[13px] uppercase tracking-wider">
+          Записаться
+        </a>
       </article>
 
       <!-- Комплекс "Жиротоп" -->
-      <article class="card p-5 md:p-6 md:col-span-2">
+      <article class="card p-5 md:p-6 md:col-span-2 flex flex-col">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
-            <h3 class="text-[16.5px] font-semibold">Комплекс «Жиротоп»</h3>
-            <p class="mt-1.5 text-[12.5px] text-[#7a8c82]">RF-лифтинг + вакуумный массаж — подтяжка и локальное жиросжигание.</p>
+            <h3 class="text-[17px] font-semibold text-white">Комплекс «Жиротоп»</h3>
+            <p class="mt-2 text-[13px] leading-relaxed text-emerald-100/90">RF-лифтинг + вакуумный массаж — подтяжка и локальное жиросжигание.</p>
           </div>
           <div class="flex items-baseline gap-3 shrink-0">
-            <span class="text-[22px] font-bold text-white">1 200 ₽</span>
+            <span class="text-[24px] font-bold text-white">1 200 ₽</span>
             <span class="price-old">1 800 ₽</span>
           </div>
         </div>
+        <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
+           class="mt-5 btn-outline-gold w-full rounded-xl py-3 text-center text-[13px] uppercase tracking-wider">
+          Записаться
+        </a>
       </article>
     </div>
   </section>
 
   <!-- ================= ЛАЗЕРНАЯ ЭПИЛЯЦИЯ ================= -->
   <section id="laser" class="py-6 md:py-12">
-    <h2 class="text-[11px] font-semibold tracking-[.28em] text-[#7a8c82] text-center">ЛАЗЕРНАЯ ЭПИЛЯЦИЯ</h2>
-    <p class="mt-3 text-center text-[13.5px] text-[#7a8c82]">Диодный лазер с ледяным охлаждением — без боли и ожогов</p>
+    <h2 class="text-[11px] font-semibold tracking-[.28em] text-amber-300 text-center">ЛАЗЕРНАЯ ЭПИЛЯЦИЯ</h2>
+    <p class="mt-3 text-center text-[14px] text-slate-200">Диодный лазер с ледяным охлаждением — без боли и ожогов</p>
 
-    <div class="mt-6 md:mt-10 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
-      <article class="card p-5 md:p-6 text-center">
+    <div class="mt-6 md:mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <article class="card p-5 md:p-6 flex flex-col text-center">
         <div class="flex justify-center mb-4">
-          <span class="w-12 h-12 rounded-xl grid place-items-center border border-amber-500/20 bg-amber-500/5">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5b544" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <span class="w-12 h-12 rounded-xl grid place-items-center border border-amber-500/25 bg-amber-500/10">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
           </span>
         </div>
-        <h3 class="text-[15px] font-semibold">Комплекс S</h3>
-        <p class="mt-2 text-[12.5px] text-[#7a8c82]">Подмышки + Глубокое бикини</p>
+        <h3 class="text-[16px] font-semibold text-white">Комплекс S</h3>
+        <p class="mt-2 text-[13px] text-emerald-100/90">Подмышки + Глубокое бикини</p>
         <div class="price-line my-4"></div>
-        <span class="text-[24px] font-bold text-white">1 900 ₽</span>
+        <span class="text-[26px] font-bold text-white">1 900 ₽</span>
+        <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
+           class="mt-5 btn-outline-gold w-full rounded-xl py-3 text-center text-[13px] uppercase tracking-wider">
+          Записаться
+        </a>
       </article>
 
-      <article class="card p-5 md:p-6 text-center relative">
-        <div class="absolute top-4 right-4"><span class="badge-hit">ПОПУЛЯРНО</span></div>
-        <div class="flex justify-center mb-4">
-          <span class="w-12 h-12 rounded-xl grid place-items-center border border-amber-500/20 bg-amber-500/5">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5b544" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="8" stroke-dasharray="2 3"/></svg>
+      <article class="card p-5 md:p-6 flex flex-col text-center relative">
+        <div class="absolute top-5 left-1/2 -translate-x-1/2"><span class="badge-hit">ХИТ</span></div>
+        <div class="flex justify-center mb-4 mt-6 md:mt-0">
+          <span class="w-12 h-12 rounded-xl grid place-items-center border border-amber-500/25 bg-amber-500/10">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="8" stroke-dasharray="2 3"/></svg>
           </span>
         </div>
-        <h3 class="text-[15px] font-semibold">Комплекс M</h3>
-        <p class="mt-2 text-[12.5px] text-[#7a8c82]">Подмышки + Бикини + Голени</p>
+        <h3 class="text-[16px] font-semibold text-white">Комплекс M</h3>
+        <p class="mt-2 text-[13px] text-emerald-100/90">Подмышки + Бикини + Голени</p>
         <div class="price-line my-4"></div>
-        <span class="text-[24px] font-bold text-white">2 900 ₽</span>
+        <span class="text-[26px] font-bold text-white">2 900 ₽</span>
+        <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
+           class="mt-5 btn-outline-gold w-full rounded-xl py-3 text-center text-[13px] uppercase tracking-wider">
+          Записаться
+        </a>
       </article>
 
-      <article class="card p-5 md:p-6 text-center">
+      <article class="card p-5 md:p-6 flex flex-col text-center">
         <div class="flex justify-center mb-4">
-          <span class="w-12 h-12 rounded-xl grid place-items-center border border-amber-500/20 bg-amber-500/5">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5b544" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+          <span class="w-12 h-12 rounded-xl grid place-items-center border border-amber-500/25 bg-amber-500/10">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
           </span>
         </div>
-        <h3 class="text-[15px] font-semibold">Всё тело</h3>
-        <p class="mt-2 text-[12.5px] text-[#7a8c82]">Полный комплекс лазерной эпиляции</p>
+        <h3 class="text-[16px] font-semibold text-white">Всё тело</h3>
+        <p class="mt-2 text-[13px] text-emerald-100/90">Полный комплекс лазерной эпиляции</p>
         <div class="price-line my-4"></div>
-        <span class="text-[24px] font-bold text-white">от 4 500 ₽</span>
+        <span class="text-[26px] font-bold text-white">от 4 500 ₽</span>
+        <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
+           class="mt-5 btn-outline-gold w-full rounded-xl py-3 text-center text-[13px] uppercase tracking-wider">
+          Записаться
+        </a>
       </article>
     </div>
   </section>
 
   <!-- ================= ПОЧЕМУ LASER ONE ================= -->
-  <section id="why" class="py-10 md:py-16">
-    <h2 class="text-[11px] font-semibold tracking-[.28em] text-[#7a8c82] text-center">ПОЧЕМУ ВЫБИРАЮТ LASER ONE</h2>
-    <p class="mt-3 text-center text-[13.5px] text-[#7a8c82]">Мы заботимся о результате и вашем комфорте</p>
+  <section id="about" class="py-10 md:py-16">
+    <h2 class="text-[11px] font-semibold tracking-[.28em] text-amber-300 text-center">ПОЧЕМУ ВЫБИРАЮТ LASER ONE</h2>
+    <p class="mt-3 text-center text-[14px] text-slate-200">Мы заботимся о результате и вашем комфорте</p>
 
-    <div class="mt-6 md:mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+    <div class="mt-6 md:mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="card p-5 md:p-6 flex md:flex-col gap-4">
-        <span class="shrink-0 w-11 h-11 rounded-xl grid place-items-center border border-amber-500/20 bg-amber-500/5">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5b544" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 8h6M9 12h6M9 16h4"/><circle cx="17" cy="16" r="1.5"/></svg>
+        <span class="shrink-0 w-11 h-11 rounded-xl grid place-items-center border border-amber-500/25 bg-amber-500/10">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 8h6M9 12h6M9 16h4"/><circle cx="17" cy="16" r="1.5"/></svg>
         </span>
         <div>
-          <h3 class="text-[15px] font-semibold">Оригинальные аппараты</h3>
-          <p class="mt-1.5 text-[12.5px] leading-relaxed text-[#7a8c82]">Мощные LPG и диодный лазер с ледяным охлаждением — без боли и ожогов.</p>
+          <h3 class="text-[15.5px] font-semibold text-white">Оригинальные аппараты</h3>
+          <p class="mt-2 text-[13px] leading-relaxed text-emerald-100/90">Мощные LPG и диодный лазер с ледяным охлаждением — без боли и ожогов.</p>
         </div>
       </div>
 
       <div class="card p-5 md:p-6 flex md:flex-col gap-4">
-        <span class="shrink-0 w-11 h-11 rounded-xl grid place-items-center border border-amber-500/20 bg-amber-500/5">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5b544" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.5L7 21l5-3 5 3-1.5-8.5"/></svg>
+        <span class="shrink-0 w-11 h-11 rounded-xl grid place-items-center border border-amber-500/25 bg-amber-500/10">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.5L7 21l5-3 5 3-1.5-8.5"/></svg>
         </span>
         <div>
-          <h3 class="text-[15px] font-semibold">Сертифицированные мастера</h3>
-          <p class="mt-1.5 text-[12.5px] leading-relaxed text-[#7a8c82]">Специалисты с опытом от 3 лет, регулярное обучение и аттестация.</p>
+          <h3 class="text-[15.5px] font-semibold text-white">Сертифицированные мастера</h3>
+          <p class="mt-2 text-[13px] leading-relaxed text-emerald-100/90">Специалисты с опытом от 3 лет, регулярное обучение и аттестация.</p>
         </div>
       </div>
 
       <div class="card p-5 md:p-6 flex md:flex-col gap-4">
-        <span class="shrink-0 w-11 h-11 rounded-xl grid place-items-center border border-amber-500/20 bg-amber-500/5">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5b544" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21V12h6v9"/><path d="M3 21h18"/></svg>
+        <span class="shrink-0 w-11 h-11 rounded-xl grid place-items-center border border-amber-500/25 bg-amber-500/10">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21V12h6v9"/><path d="M3 21h18"/></svg>
         </span>
         <div>
-          <h3 class="text-[15px] font-semibold">Студия в центре города</h3>
-          <p class="mt-1.5 text-[12.5px] leading-relaxed text-[#7a8c82]">Уютная атмосфера на Красноармейской, 41 — в самом сердце Брянска.</p>
+          <h3 class="text-[15.5px] font-semibold text-white">Студия в центре города</h3>
+          <p class="mt-2 text-[13px] leading-relaxed text-emerald-100/90">Уютная атмосфера на Красноармейской, 41 — в самом сердце Брянска.</p>
         </div>
       </div>
     </div>
@@ -414,38 +405,38 @@
 
   <!-- ================= КОНТАКТЫ ================= -->
   <section id="contacts" class="py-6 md:py-12 pb-14 md:pb-20">
-    <div class="grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-5">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-5">
 
-      <!-- Левая карточка: текст + кнопки -->
+      <!-- Левая карточка -->
       <div class="card p-7 md:p-9 lg:col-span-3 relative overflow-hidden text-center lg:text-left">
-        <div class="absolute -top-16 left-1/2 -translate-x-1/2 w-56 h-56 rounded-full" style="background:radial-gradient(circle, rgba(224,168,58,.14), transparent 65%);filter:blur(50px)"></div>
+        <div class="absolute -top-16 left-1/2 -translate-x-1/2 w-56 h-56 rounded-full" style="background:radial-gradient(circle, rgba(251,191,36,.14), transparent 65%);filter:blur(50px)"></div>
         <div class="relative">
-          <h2 class="text-[24px] md:text-[32px] font-extrabold leading-tight">Ждём вас в <span class="grad-text">Laser One</span></h2>
-          <p class="mt-3 md:mt-4 text-[13.5px] md:text-[15px] text-[#7a8c82] leading-relaxed max-w-md mx-auto lg:mx-0">
-            Запишитесь на бесплатную консультацию — подберём оптимальный курс процедур для вас.
+          <h2 class="text-[26px] md:text-[34px] font-extrabold leading-tight text-white">Ждём вас в <span class="grad-text">Laser One</span></h2>
+          <p class="mt-3 md:mt-4 text-[14px] md:text-[15px] text-slate-200 leading-relaxed max-w-md mx-auto lg:mx-0">
+            Онлайн-запись работает круглосуточно — выберите удобное время и мастера за пару минут.
           </p>
 
           <!-- Кнопки: ровная сетка -->
           <div class="mt-6 md:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 max-w-md mx-auto lg:mx-0">
-            <a href="https://wa.me/74832331617?text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%B2%20Laser%20One" target="_blank" rel="noopener"
-               class="btn-gold shine rounded-2xl py-4 text-[14px] md:text-[15px] font-semibold text-center flex items-center justify-center">Написать в WhatsApp</a>
+            <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
+               class="btn-gold shine rounded-2xl py-4 text-[14px] md:text-[15px] font-semibold text-center flex items-center justify-center">Онлайн-запись</a>
             <a href="tel:+74832331617"
-               class="btn-ghost rounded-2xl py-4 text-[14px] font-medium text-[#d4e0db] text-center flex items-center justify-center">Позвонить: +7 (4832) 33-16-17</a>
+               class="btn-ghost rounded-2xl py-4 text-[14px] md:text-[15px] font-medium text-slate-100 text-center flex items-center justify-center">Позвонить: +7 (4832) 33-16-17</a>
           </div>
 
-          <div class="mt-6 md:mt-8 pt-5 border-t border-amber-500/20 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left">
+          <div class="mt-6 md:mt-8 pt-5 border-t border-amber-500/20 grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
             <div class="flex items-start gap-2.5">
-              <svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f5b544" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <svg class="shrink-0 mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
               <div>
-                <p class="text-[12px] text-[#7a8c82]">Адрес</p>
-                <p class="text-[13px] font-medium">г. Брянск, ул. Красноармейская, 41</p>
+                <p class="text-[12px] text-emerald-300/90">Адрес</p>
+                <p class="text-[13.5px] font-medium text-white">г. Брянск, ул. Красноармейская, 41</p>
               </div>
             </div>
             <div class="flex items-start gap-2.5">
-              <svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f5b544" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <svg class="shrink-0 mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               <div>
-                <p class="text-[12px] text-[#7a8c82]">Режим работы</p>
-                <p class="text-[13px] font-medium">Ежедневно 10:00–20:00</p>
+                <p class="text-[12px] text-emerald-300/90">Режим работы</p>
+                <p class="text-[13.5px] font-medium text-white">Ежедневно 10:00–20:00</p>
               </div>
             </div>
           </div>
@@ -453,12 +444,12 @@
       </div>
 
       <!-- Правая карточка: карта -->
-      <div class="map-frame lg:col-span-2 min-h-[220px] lg:min-h-full">
+      <div class="map-frame lg:col-span-2 min-h-[240px] lg:min-h-full">
         <iframe
           title="Laser One на карте"
           src="https://yandex.ru/map-widget/v1/?text=%D0%91%D1%80%D1%8F%D0%BD%D1%81%D0%BA%2C%20%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B0%D1%80%D0%BC%D0%B5%D0%B9%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB.%2C%2041&z=17"
           width="100%" height="100%" loading="lazy"
-          style="border:0; display:block; min-height:220px; filter:invert(.92) hue-rotate(130deg) saturate(.45) contrast(.92);"
+          style="border:0; display:block; min-height:240px; filter:invert(.92) hue-rotate(130deg) saturate(.45) contrast(.92);"
           allowfullscreen></iframe>
       </div>
     </div>
@@ -467,29 +458,22 @@
 
 <!-- ================= ПОДВАЛ ================= -->
 <footer class="border-t border-amber-500/20 py-8 md:py-10">
-  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex flex-col md:flex-row items-center justify-between gap-4">
       <div class="text-center md:text-left">
-        <p class="text-[11px] font-bold tracking-[.18em] logo-text">LASER ONE</p>
-        <p class="mt-2 text-[11px] text-[#5a6b63]">© <span id="yr"></span> Laser One · Брянск · we care for you</p>
+        <p class="text-[11px] font-bold tracking-[.2em] grad-text">LASER ONE</p>
+        <p class="mt-2 text-[11.5px] text-slate-300">© <span id="yr"></span> Laser One · Брянск · we care for you</p>
       </div>
-      <nav class="hidden md:flex items-center gap-7">
-        <a href="#lpg" class="nav-link">LPG</a>
-        <a href="#laser" class="nav-link">Лазер</a>
-        <a href="#why" class="nav-link">О студии</a>
+      <nav class="hidden lg:flex items-center gap-7">
+        <a href="#lpg" class="nav-link">LPG-массаж</a>
+        <a href="#laser" class="nav-link">Лазерная эпиляция</a>
+        <a href="#about" class="nav-link">О студии</a>
         <a href="#contacts" class="nav-link">Контакты</a>
       </nav>
-      <a href="tel:+74832331617" class="text-[12px] text-[#7a8c82] hover:text-white transition-colors">+7 (4832) 33-16-17</a>
+      <a href="tel:+74832331617" class="text-[12.5px] text-emerald-100/90 hover:text-amber-300 transition-colors">+7 (4832) 33-16-17</a>
     </div>
   </div>
 </footer>
-
-<!-- Плавающая кнопка WhatsApp: только на мобилке -->
-<a href="https://wa.me/74832331617" target="_blank" rel="noopener" aria-label="WhatsApp"
-   class="md:hidden fixed bottom-5 right-4 z-50 w-14 h-14 rounded-full grid place-items-center float"
-   style="background:linear-gradient(135deg,#25D366,#128C7E);box-shadow:0 14px 34px -12px rgba(37,211,102,.75)">
-  <svg width="27" height="27" viewBox="0 0 24 24" fill="#fff"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35ZM12.04 21.5h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.18 4.22-9.4 9.42-9.4 2.51 0 4.87.98 6.65 2.76a9.35 9.35 0 0 1 2.75 6.65c0 5.18-4.22 9.4-9.41 9.4ZM20.52 3.45A11.75 11.75 0 0 0 12.04 0C5.5 0 .17 5.33.17 11.87c0 2.09.55 4.13 1.59 5.93L.07 24l6.35-1.66a11.85 11.85 0 0 0 5.62 1.43h.01c6.54 0 11.87-5.33 11.87-11.87 0-3.17-1.24-6.15-3.48-8.4Z"/></svg>
-</a>
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
