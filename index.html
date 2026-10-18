@@ -92,6 +92,22 @@
     min-height:260px;
   }
 
+  /* Фото */
+  .photo-frame{
+    overflow:hidden;
+    background:#0d241a;
+  }
+  .photo-frame img{
+    width:100%; height:100%; object-fit:cover; display:block;
+  }
+  .photo-shine::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(to top, rgba(6,18,13,.75) 0%, rgba(6,18,13,.15) 45%, transparent 75%);
+  }
+  .photo-tint{
+    mix-blend-mode:soft-light; pointer-events:none;
+  }
+
   /* Базовая карточка услуги */
   .svc-card{
     display:flex; flex-direction:column; justify-content:space-between;
@@ -106,7 +122,6 @@
     border-color:rgba(251,191,36,.42);
     box-shadow:0 18px 40px -24px rgba(251,191,36,.4);
   }
-  /* Карточка-хит */
   .svc-card-hit{
     background:#0f241c;
     border:2px solid rgba(251,191,36,.9);
@@ -133,7 +148,6 @@
 <header class="sticky top-0 z-50 backdrop-blur-md bg-[#07130e]/90 border-b border-amber-500/15">
   <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between gap-3 lg:gap-6">
 
-    <!-- Логотип -->
     <a href="#hero" class="flex items-center gap-3 shrink-0">
       <svg class="w-10 h-10 text-amber-400 shrink-0" viewBox="0 0 100 100" fill="none" stroke="currentColor">
         <polygon points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5" stroke="#f59e0b" stroke-width="4" fill="#0d241a"/>
@@ -151,7 +165,6 @@
       </div>
     </a>
 
-    <!-- Навигация: только десктоп -->
     <nav class="hidden lg:flex items-center gap-6 text-sm font-medium shrink-0">
       <a href="#lpg" class="nav-link">LPG-массаж</a>
       <a href="#laser" class="nav-link">Лазерная эпиляция</a>
@@ -159,7 +172,6 @@
       <a href="#contacts" class="nav-link">Контакты</a>
     </nav>
 
-    <!-- Справа: адрес + кнопка -->
     <div class="flex items-center gap-2 sm:gap-3 shrink-0">
       <div class="hidden sm:flex items-center gap-2 text-xs text-emerald-100/90 bg-emerald-950/60 px-3 py-1.5 rounded-full border border-emerald-500/20 whitespace-nowrap">
         <svg class="w-3.5 h-3.5 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
@@ -177,33 +189,59 @@
 <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
   <!-- ================= HERO ================= -->
-  <section id="hero" class="pt-10 md:pt-20 pb-12 md:pb-20 text-center">
-    <span class="chip mx-auto"><span class="dot"></span> Студия аппаратной косметологии и лазерной эпиляции</span>
+  <section id="hero" class="pt-10 md:pt-16 pb-12 md:pb-20">
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-    <h1 class="mt-6 md:mt-8 text-[32px] md:text-5xl lg:text-[56px] leading-[1.1] md:leading-[1.06] font-extrabold tracking-tight max-w-4xl mx-auto">
-      Коррекция фигуры и<br class="hidden sm:block"> <span class="grad-text">лазерная эпиляция</span> в Брянске
-    </h1>
+      <!-- Левая колонка -->
+      <div class="lg:col-span-7 text-center lg:text-left">
+        <span class="chip"><span class="dot"></span> Студия аппаратной косметологии и лазерной эпиляции</span>
 
-    <p class="mt-4 md:mt-6 text-[15px] md:text-[17px] leading-relaxed text-slate-200 max-w-2xl mx-auto">
-      Оригинальные аппараты LPG, видимый результат уже после первых сеансов
-      и бережная забота о вашей фигуре.
-    </p>
+        <h1 class="mt-6 text-[32px] md:text-5xl lg:text-[52px] leading-[1.1] lg:leading-[1.06] font-extrabold tracking-tight">
+          Коррекция фигуры и<br class="hidden sm:block"> <span class="grad-text">лазерная эпиляция</span> в Брянске
+        </h1>
 
-    <div class="mt-7 md:mt-9 flex flex-col gap-3 max-w-md mx-auto">
-      <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
-         class="shine rounded-2xl py-4 px-6 bg-gradient-to-r from-amber-400 to-amber-500 text-emerald-950 font-bold text-[14px] md:text-[15px] tracking-wide shadow-lg shadow-amber-500/20 hover:opacity-90 transition">
-        Записаться на сеанс LPG за 900 ₽
-      </a>
-      <a href="tel:+74832331617"
-         class="rounded-2xl py-4 px-6 border border-emerald-500/30 bg-emerald-950/30 hover:bg-emerald-950/50 text-emerald-100 font-semibold text-[14px] md:text-[15px] flex items-center justify-center gap-2 transition">
-        <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.979a13.078 13.078 0 005.718 5.718l.979-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-        Позвонить в студию
-      </a>
-    </div>
+        <p class="mt-4 md:mt-6 text-[15px] md:text-[17px] leading-relaxed text-slate-200 max-w-xl mx-auto lg:mx-0">
+          Оригинальные аппараты LPG, видимый результат уже после первых сеансов
+          и бережная забота о вашей фигуре.
+        </p>
 
-    <div class="mt-6 chip justify-center">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-      г. Брянск, ул. Красноармейская, 41
+        <div class="mt-7 md:mt-9 flex flex-col gap-3 max-w-md mx-auto lg:mx-0">
+          <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
+             class="shine rounded-2xl py-4 px-6 bg-gradient-to-r from-amber-400 to-amber-500 text-emerald-950 font-bold text-[14px] md:text-[15px] tracking-wide shadow-lg shadow-amber-500/20 hover:opacity-90 transition">
+            Записаться на сеанс LPG за 900 ₽
+          </a>
+          <a href="tel:+74832331617"
+             class="rounded-2xl py-4 px-6 border border-emerald-500/30 bg-emerald-950/30 hover:bg-emerald-950/50 text-emerald-100 font-semibold text-[14px] md:text-[15px] flex items-center justify-center gap-2 transition">
+            <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.979a13.078 13.078 0 005.718 5.718l.979-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            Позвонить в студию
+          </a>
+        </div>
+
+        <div class="mt-6 chip">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          г. Брянск, ул. Красноармейская, 41
+        </div>
+      </div>
+
+      <!-- Правая колонка: фото -->
+      <div class="lg:col-span-5">
+        <div class="relative rounded-3xl overflow-hidden border border-amber-500/30 shadow-[0_0_35px_rgba(251,191,36,0.15)] aspect-[4/5] max-w-md mx-auto">
+          <img
+            src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80"
+            alt="LPG-массаж в студии Laser One"
+            class="absolute inset-0 w-full h-full object-cover"
+            loading="eager" decoding="async">
+          <div class="absolute inset-0 photo-shine"></div>
+
+          <!-- Стеклянный бейдж поверх фото -->
+          <div class="absolute bottom-0 left-0 right-0 backdrop-blur-md bg-black/60 border border-white/10 p-3 rounded-2xl m-4">
+            <div class="flex items-center gap-3">
+              <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shrink-0"></div>
+              <span class="text-xs font-semibold text-white">Оригинальный LPG • Заметный эффект с 1-го сеанса</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -214,7 +252,6 @@
 
     <div class="mt-6 md:mt-10 grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
 
-      <!-- 10 сеансов — ХИТ -->
       <article class="svc-card svc-card-hit relative">
         <div class="absolute top-5 right-5"><span class="badge-hit">ХИТ</span></div>
         <div>
@@ -232,7 +269,6 @@
         </a>
       </article>
 
-      <!-- 5 сеансов -->
       <article class="svc-card">
         <div>
           <h3 class="text-[17px] font-semibold text-white">5 сеансов LPG-массажа</h3>
@@ -249,7 +285,6 @@
         </a>
       </article>
 
-      <!-- Пробный сеанс -->
       <article class="svc-card">
         <div>
           <h3 class="text-[17px] font-semibold text-white">Пробный сеанс LPG-массажа</h3>
@@ -266,7 +301,6 @@
         </a>
       </article>
 
-      <!-- Комплекс «Убийца жира» -->
       <article class="svc-card">
         <div>
           <h3 class="text-[17px] font-semibold text-white">Комплекс «Убийца жира»</h3>
@@ -283,7 +317,6 @@
         </a>
       </article>
 
-      <!-- Комплекс «Жиротоп» -->
       <article class="svc-card md:col-span-2">
         <div>
           <h3 class="text-[17px] font-semibold text-white">Комплекс «Жиротоп»</h3>
@@ -304,8 +337,30 @@
 
   <!-- ================= ЛАЗЕРНАЯ ЭПИЛЯЦИЯ ================= -->
   <section id="laser" class="py-6 md:py-12">
-    <h2 class="text-[11px] font-semibold tracking-[.28em] text-amber-300 text-center">ЛАЗЕРНАЯ ЭПИЛЯЦИЯ</h2>
-    <p class="mt-3 text-center text-[14px] text-slate-200">Диодный лазер с ледяным охлаждением — без боли и ожогов</p>
+    <!-- Фото-баннер блока -->
+    <div class="relative rounded-3xl overflow-hidden border border-amber-500/25 shadow-lg mb-8 md:mb-10 aspect-[16/9] sm:aspect-[21/9]">
+      <img
+        src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=800&q=80"
+        alt="Гладкая кожа после лазерной эпиляции"
+        class="absolute inset-0 w-full h-full object-cover"
+        loading="lazy" decoding="async">
+      <div class="absolute inset-0" style="background:linear-gradient(to right, rgba(6,18,13,.92) 0%, rgba(6,18,13,.65) 45%, rgba(6,18,13,.25) 100%)"></div>
+
+      <div class="absolute inset-0 flex items-center">
+        <div class="max-w-xl px-6 sm:px-10">
+          <span class="chip border-amber-500/30">Диодный лазер нового поколения</span>
+          <h2 class="mt-4 text-[26px] sm:text-4xl font-extrabold leading-tight text-white">
+            Лазерная эпиляция<br><span class="grad-text">без боли и ожогов</span>
+          </h2>
+          <p class="mt-3 text-sm text-emerald-100/90 leading-relaxed max-w-md">
+            Сапфировое охлаждение до −4 °C, стерильные одноразовые насадки
+            и деликатное отношение к вашей коже.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-center text-[14px] text-slate-200">Диодный лазер с ледяным охлаждением — без боли и ожогов</p>
 
     <div class="mt-6 md:mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
 
@@ -410,11 +465,80 @@
     </div>
   </section>
 
+  <!-- ================= АТМОСФЕРА И ОБОРУДОВАНИЕ ================= -->
+  <section id="atmosphere" class="py-10 md:py-16">
+    <div class="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center">
+
+      <!-- Фото кабинета -->
+      <div class="photo-frame relative rounded-3xl border border-amber-500/20 w-full h-[280px] sm:h-[360px] shadow-lg">
+        <img
+          src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=800&q=80"
+          alt="Интерьер кабинета студии Laser One"
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="lazy" decoding="async">
+        <div class="absolute inset-0 photo-shine"></div>
+      </div>
+
+      <!-- Преимущества студии -->
+      <div>
+        <span class="chip">Премиум-забота о вашей красоте</span>
+        <h2 class="mt-5 text-[26px] md:text-4xl font-extrabold leading-tight text-white">
+          Современное оборудование<br><span class="grad-text">и тёплая атмосфера</span>
+        </h2>
+        <p class="mt-4 text-[14px] md:text-[15px] text-slate-200 leading-relaxed">
+          Мы работаем только на сертифицированном оборудовании и соблюдаем
+          все санитарные нормы — чтобы процедура была не только эффективной, но и безопасной.
+        </p>
+
+        <ul class="mt-7 space-y-4">
+          <li class="flex gap-3.5">
+            <span class="shrink-0 w-9 h-9 rounded-xl grid place-items-center border border-amber-500/25 bg-amber-500/10">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v6l-5 9a2 2 0 002 3h12a2 2 0 002-3l-5-9V3"/><path d="M8 3h8"/></svg>
+            </span>
+            <div>
+              <h3 class="text-[15px] font-semibold text-white">Оригинальные сертифицированные аппараты LPG Cellu M6</h3>
+              <p class="mt-1 text-[13px] text-emerald-100/90">Французское оборудование мирового уровня.</p>
+            </div>
+          </li>
+
+          <li class="flex gap-3.5">
+            <span class="shrink-0 w-9 h-9 rounded-xl grid place-items-center border border-amber-500/25 bg-amber-500/10">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+            </span>
+            <div>
+              <h3 class="text-[15px] font-semibold text-white">Диодный лазер нового поколения</h3>
+              <p class="mt-1 text-[13px] text-emerald-100/90">Сапфировое охлаждение до −4 °C — максимум комфорта на любых участках.</p>
+            </div>
+          </li>
+
+          <li class="flex gap-3.5">
+            <span class="shrink-0 w-9 h-9 rounded-xl grid place-items-center border border-amber-500/25 bg-amber-500/10">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.5L7 21l5-3 5 3-1.5-8.5"/></svg>
+            </span>
+            <div>
+              <h3 class="text-[15px] font-semibold text-white">Сертифицированные специалисты с опытом от 3-х лет</h3>
+              <p class="mt-1 text-[13px] text-emerald-100/90">Регулярное обучение и повышение квалификации.</p>
+            </div>
+          </li>
+
+          <li class="flex gap-3.5">
+            <span class="shrink-0 w-9 h-9 rounded-xl grid place-items-center border border-amber-500/25 bg-amber-500/10">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L3 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-9-4Z"/><path d="M9 12l2 2 4-4"/></svg>
+            </span>
+            <div>
+              <h3 class="text-[15px] font-semibold text-white">Одноразовые стерильные расходники</h3>
+              <p class="mt-1 text-[13px] text-emerald-100/90">Персональные костюмы для LPG — только для вас.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= КОНТАКТЫ ================= -->
   <section id="contacts" class="py-6 md:py-12 pb-14 md:pb-20">
     <div class="grid grid-cols-1 lg:grid-cols-5 gap-5 items-stretch">
 
-      <!-- Левая карточка -->
       <div class="lg:col-span-3 flex flex-col justify-between p-8 rounded-2xl bg-[#0b1b15]/95 border border-amber-500/20 shadow-xl">
         <div>
           <h3 class="text-3xl font-extrabold text-white tracking-tight">
@@ -424,7 +548,6 @@
             Онлайн-запись работает круглосуточно — выберите удобное время и любимого мастера за пару кликов.
           </p>
 
-          <!-- Главная кнопка на всю ширину -->
           <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
              class="mt-6 flex items-center justify-center gap-2 w-full py-4 px-6 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-emerald-950 font-bold text-sm tracking-wider uppercase hover:brightness-110 transition shadow-lg shadow-amber-500/20">
             <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -433,7 +556,6 @@
             Записаться онлайн через YClients
           </a>
 
-          <!-- Вторая компактная кнопка быстрого звонка в одну строчку -->
           <a href="tel:+74832331617"
              class="mt-3 flex items-center justify-center gap-2 w-full py-3 px-5 rounded-xl border border-emerald-500/30 bg-emerald-950/40 hover:bg-emerald-950/70 text-emerald-200 text-sm font-medium transition">
             <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -443,7 +565,6 @@
           </a>
         </div>
 
-        <!-- Данные внизу -->
         <div class="mt-8 pt-6 border-t border-emerald-500/15 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
           <div class="flex items-start gap-2.5 text-emerald-100/90">
             <svg class="w-4 h-4 text-amber-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -467,7 +588,6 @@
         </div>
       </div>
 
-      <!-- Карта -->
       <div class="map-frame lg:col-span-2">
         <iframe
           title="Laser One на карте"
@@ -504,14 +624,14 @@
 
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll('section .svc-card, section .map-frame, section h2, section > div > p').forEach(el => {
     el.classList.add('reveal');
     io.observe(el);
   });
 
-  document.querySelectorAll('#hero .chip, #hero h1, #hero p, #hero a').forEach(el => el.classList.add('in'));
+  document.querySelectorAll('#hero .chip, #hero h1, #hero p, #hero a, #hero img, #atmosphere').forEach(el => el.classList.add('in'));
 </script>
 </body>
 </html>
