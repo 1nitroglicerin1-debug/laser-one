@@ -90,56 +90,62 @@
 <main class="flex-1">
 
   <!-- ================= HERO ================= -->
-  <section class="relative pt-12 pb-16 lg:pt-16 lg:pb-20 overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+  <section class="bg-[#FAF8F5]">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
-      <!-- ЛЕВАЯ КОЛОНКА -->
-      <div class="lg:col-span-7">
-        <span class="inline-flex items-center gap-2 bg-[#8FA499]/20 border border-[#8FA499]/40 text-[#00382B] px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide mb-6">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#00382B]"></span>
-          Студия аппаратной косметологии · Брянск
-        </span>
+    <!-- ЛЕВАЯ КОЛОНКА -->
+    <div class="lg:col-span-7 text-center lg:text-left">
 
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl text-[#1A1A1A] font-serif leading-[1.15] tracking-tight mb-6">
-          <span class="inline-block">Пространство бережной эстетики</span><br>
-          <span class="inline-block">и аппаратного ухода</span>
-        </h1>
+      <span class="inline-flex items-center gap-2 bg-[#8FA499]/15 text-[#00382B] border border-[#8FA499]/30 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide mb-6">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#00382B]"></span>
+        Студия аппаратной косметологии · Брянск
+      </span>
 
-        <p class="text-[#2D2D2D] text-base lg:text-lg leading-relaxed mb-8 max-w-xl">
-          Персональные протоколы преображения и лазерная эпиляция нового поколения в историческом центре Брянска.
-        </p>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl text-[#1A1A1A] font-serif leading-[1.15] mb-6">
+        <span class="inline-block">Пространство бережной эстетики</span><br>
+        <span class="inline-block">и аппаратного ухода</span>
+      </h1>
 
-        <div class="flex flex-wrap items-center gap-4 mb-10">
-          <a href="#procedures" class="inline-flex items-center justify-center bg-[#00382B] text-white px-7 py-3.5 rounded-full font-medium hover:bg-[#00281F] transition-all duration-200 shadow-sm">
-            Выбрать процедуру
-          </a>
-          <a href="https://yclients.com" target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-white border border-[#E5E0D8] text-[#1A1A1A] px-7 py-3.5 rounded-full font-medium hover:bg-[#FAF8F5] transition-all duration-200">
-            Записаться
-          </a>
-        </div>
+      <p class="text-[#2D2D2D] text-base lg:text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
+        Персональные протоколы преображения и лазерная эпиляция нового поколения в историческом центре Брянска.
+      </p>
 
-        <div class="pt-6 border-t border-[#E5E0D8]/60 flex flex-wrap items-center gap-6 text-xs text-[#2D2D2D]/70">
-          <div class="flex items-center gap-1.5">
-            <svg class="w-3.5 h-3.5 text-[#8FA499]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-            <span>ул. Красноармейская, 41</span>
-          </div>
-          <div class="flex items-center gap-1.5">
-            <svg class="w-3.5 h-3.5 text-[#8FA499]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            <span>Ежедневно 10:00–20:00</span>
-          </div>
-        </div>
+      <!-- Кнопки -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-8">
+        <a href="#procedures"
+           class="bg-[#00382B] text-white hover:bg-[#00271E] text-center px-8 py-4 rounded-full font-medium transition shadow-md">
+          Выбрать процедуру
+        </a>
+        <a href="https://yclients.com" target="_blank" rel="noopener"
+           class="bg-white border border-[#E5E0D8] text-[#1A1A1A] hover:bg-stone-50 text-center px-8 py-4 rounded-full font-medium transition shadow-sm">
+          Записаться
+        </a>
       </div>
 
-      
-      <!-- ПРАВАЯ КОЛОНКА С ФОТО -->
-      <div class="hidden lg:flex lg:col-span-5 justify-end items-center">
-        <div class="w-[360px] h-[450px] rounded-3xl overflow-hidden shadow-lg border border-[#E5E0D8] flex-shrink-0">
-          <img src="https://images.pexels.com/photos/3985333/pexels-photo-3985333.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Студия аппаратной косметологии Laser One" class="w-full h-full object-cover">
-        </div>
+      <!-- Контакты под чертой -->
+      <div class="flex flex-wrap items-center justify-center lg:justify-start gap-x-8 gap-y-2 text-xs sm:text-sm text-stone-500 border-t border-[#E5E0D8]/60 pt-6">
+        <span class="flex items-center gap-2">
+          <svg class="w-4 h-4 shrink-0 text-stone-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          ул. Красноармейская, 41
+        </span>
+        <span class="flex items-center gap-2">
+          <svg class="w-4 h-4 shrink-0 text-stone-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Ежедневно 10:00–20:00
+        </span>
       </div>
 
     </div>
+
+    <!-- ПРАВАЯ КОЛОНКА -->
+    <div class="hidden lg:block lg:col-span-5">
+      <div class="rounded-3xl overflow-hidden shadow-lg aspect-[4/5] max-h-[460px] border border-[#E5E0D8]">
+        <img src="https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=800"
+             alt="Лазерная эпиляция"
+             class="w-full h-full object-cover"
+             loading="eager" decoding="async">
+      </div>
+    </div>
+
   </div>
 </section>
 
