@@ -22,7 +22,7 @@
   *{-webkit-tap-highlight-color:transparent; box-sizing:border-box}
   html{scroll-behavior:smooth; scroll-padding-top:96px}
   body{
-    background:#FAEBD7;
+    background:#FAF8F5;
     color:#1F2421;
     font-family:'Manrope',sans-serif;
     font-weight:400;
@@ -52,10 +52,10 @@
   }
 </style>
 </head>
-<body class="bg-[#FAEBD7] text-[#1F2421] min-h-screen flex flex-col pb-20 md:pb-0">
+<body class="bg-[#FAF8F5] text-[#1F2421] min-h-screen flex flex-col pb-20 md:pb-0">
 
 <!-- ================= ШАПКА ================= -->
-<header class="sticky top-0 z-50 backdrop-blur-md bg-[#FAEBD7]/92 border-b border-[#D9C8B8]">
+<header class="sticky top-0 z-50 backdrop-blur-md bg-[#FAF8F5]/92 border-b border-[#E5E0D8]">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
     <a href="index.html" class="flex items-center gap-3 shrink-0">
       <svg class="w-9 h-9 shrink-0" viewBox="0 0 100 100" fill="none">
@@ -70,7 +70,7 @@
       </svg>
       <div class="flex flex-col leading-none">
         <span class="font-display text-[15px] sm:text-base tracking-[.1em] text-[#00382B]">LASER ONE</span>
-        <span class="text-[9px] tracking-[.34em] text-[#8A8580] mt-1.5 uppercase">Брянск</span>
+        <span class="text-[9px] tracking-[.34em] text-[#78716C] mt-1.5 uppercase">Брянск</span>
       </div>
     </a>
 
@@ -81,7 +81,7 @@
     </nav>
 
     <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
-       class="bg-[#00382B] text-[#FAEBD7] hover:bg-[#00271E] shadow-md px-6 py-3 rounded-full font-medium transition whitespace-nowrap shrink-0 text-[11px] sm:text-xs tracking-wider uppercase">
+       class="bg-[#00382B] text-[#FAF8F5] hover:bg-[#00271E] shadow-md px-6 py-3 rounded-full font-medium transition whitespace-nowrap shrink-0 text-[11px] sm:text-xs tracking-wider uppercase">
       Записаться онлайн
     </a>
   </div>
@@ -93,9 +93,9 @@
   <section class="max-w-6xl mx-auto px-4 sm:px-6 pt-8 pb-16">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
 
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-          <span class="inline-flex items-center gap-2 bg-[#C1876B]/15 text-[#8F4E34] border border-[#C1876B]/30 font-medium px-3.5 py-1 rounded-full text-xs">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#8F4E34]"></span>
+        <div class="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
+          <span class="inline-flex items-center gap-2 bg-[#00382B]/10 text-[#00382B] border border-[#00382B]/20 font-medium px-3.5 py-1 rounded-full text-xs">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#00382B]"></span>
             LPG · RF-лифтинг · Кавитация
           </span>
 
@@ -110,17 +110,28 @@
 
           <div class="mt-9 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 justify-center lg:justify-start">
             <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
-               class="bg-[#00382B] text-[#FAEBD7] hover:bg-[#00271E] shadow-md px-6 py-3.5 rounded-full font-medium transition text-center">
+               class="bg-[#00382B] text-[#FAF8F5] hover:bg-[#00271E] shadow-md px-6 py-3.5 rounded-full font-medium transition text-center">
               Записаться на сеанс
             </a>
             <a href="#pricing"
                class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-[#00382B]/25 bg-white text-[#00382B] hover:bg-[#00382B]/5 font-medium transition">
               Смотреть абонементы
             </a>
+          <div class="flex flex-wrap items-center gap-5 sm:gap-6 pt-3 text-xs sm:text-sm text-[#78716C] justify-center lg:justify-start">
+            <span class="inline-flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-[#00382B] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              ул. Красноармейская, 41
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-[#00382B] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Ежедневно 10:00–20:00
+            </span>
+          </div>
+
           </div>
         </div>
 
-        <div class="lg:col-span-5">
+        <div class="hidden lg:block lg:col-span-5">
           <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/5] max-h-[480px]">
             <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1000&q=80"
                  alt="Коррекция фигуры — аппаратный уход"
@@ -133,7 +144,7 @@
   </section>
 
   <!-- ================= МЕТОДИКИ ================= -->
-  <section class="py-14 md:py-20 bg-[#FAEBD7]">
+  <section class="py-14 md:py-20 bg-[#FAF8F5]">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-10 md:mb-14">
         <h2 class="font-display text-[24px] sm:text-3xl md:text-[34px] text-[#00382B] mb-3">Методики и эффекты</h2>
@@ -143,53 +154,53 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
         <!-- LPG -->
-        <div class="bg-white rounded-3xl overflow-hidden border border-[#C1876B]/30 shadow-md hover:shadow-lg transition">
+        <div class="bg-white rounded-2xl overflow-hidden border border-[#E5E0D8] shadow-sm hover:shadow-md transition">
           <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80"
                alt="LPG-массаж"
                class="w-full h-56 object-cover"
                loading="lazy" decoding="async">
           <div class="p-6 sm:p-8">
-            <span class="inline-block bg-[#C1876B]/15 text-[#8F4E34] border border-[#C1876B]/30 rounded-full px-3 py-1 text-xs font-semibold mb-3">LPG CELLU M6</span>
+            <span class="inline-block bg-[#00382B]/10 text-[#00382B] border border-[#00382B]/20 font-medium rounded-full px-3 py-1 text-xs mb-3">LPG CELLU M6</span>
             <h3 class="font-display text-2xl text-[#00382B] mb-2">LPG-массаж</h3>
             <p class="text-[#78716C] text-sm leading-relaxed mb-5">
               Многофункциональный аппаратный массаж: активирует лимфоток, снимает отёчность,
               повышает упругость кожи и способствует мягкому моделированию силуэта.
             </p>
             <ul class="space-y-2.5 text-[13.5px] text-[#78716C] mb-6">
-              <li class="flex items-center gap-2.5"><span class="text-[#C1876B]">—</span> Лимфодренажный эффект</li>
-              <li class="flex items-center gap-2.5"><span class="text-[#C1876B]">—</span> Снятие отёчности и тяжести в ногах</li>
-              <li class="flex items-center gap-2.5"><span class="text-[#C1876B]">—</span> Повышение тонуса и упругости кожи</li>
+              <li class="flex items-center gap-2.5"><span class="text-[#00382B]">—</span> Лимфодренажный эффект</li>
+              <li class="flex items-center gap-2.5"><span class="text-[#00382B]">—</span> Снятие отёчности и тяжести в ногах</li>
+              <li class="flex items-center gap-2.5"><span class="text-[#00382B]">—</span> Повышение тонуса и упругости кожи</li>
             </ul>
-            <div class="flex items-center justify-between border-t border-[#EDE4D8] pt-4">
-              <span class="text-[#C1876B] font-bold text-xl">от 1 000 ₽</span>
+            <div class="flex items-center justify-between border-t border-[#E5E0D8] pt-4">
+              <span class="text-[#00382B] font-display font-bold text-xl">от 1 000 ₽</span>
               <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
-                 class="bg-[#00382B] text-[#FAEBD7] hover:bg-[#00281F] rounded-full px-5 py-2.5 text-sm font-medium transition">Записаться</a>
+                 class="bg-[#00382B] text-[#FAF8F5] hover:bg-[#00281F] rounded-full px-5 py-2.5 text-sm font-medium transition">Записаться</a>
             </div>
           </div>
         </div>
 
         <!-- RF -->
-        <div class="bg-white rounded-3xl overflow-hidden border border-[#C1876B]/30 shadow-md hover:shadow-lg transition">
+        <div class="bg-white rounded-2xl overflow-hidden border border-[#E5E0D8] shadow-sm hover:shadow-md transition">
           <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80"
                alt="RF-лифтинг и кавитация"
                class="w-full h-56 object-cover"
                loading="lazy" decoding="async">
           <div class="p-6 sm:p-8">
-            <span class="inline-block bg-[#C1876B]/15 text-[#8F4E34] border border-[#C1876B]/30 rounded-full px-3 py-1 text-xs font-semibold mb-3">RF · УЗ-КАВИТАЦИЯ</span>
+            <span class="inline-block bg-[#00382B]/10 text-[#00382B] border border-[#00382B]/20 font-medium rounded-full px-3 py-1 text-xs mb-3">RF · УЗ-КАВИТАЦИЯ</span>
             <h3 class="font-display text-2xl text-[#00382B] mb-2">RF-лифтинг и кавитация</h3>
             <p class="text-[#78716C] text-sm leading-relaxed mb-5">
               Радиочастотная подтяжка тканей и ультразвуковая кавитация для точечной
               проработки проблемных зон и улучшения контуров тела.
             </p>
             <ul class="space-y-2.5 text-[13.5px] text-[#78716C] mb-6">
-              <li class="flex items-center gap-2.5"><span class="text-[#C1876B]">—</span> Точечная проработка зон</li>
-              <li class="flex items-center gap-2.5"><span class="text-[#C1876B]">—</span> Подтяжка и уплотнение кожи</li>
-              <li class="flex items-center gap-2.5"><span class="text-[#C1876B]">—</span> Безоперационный лифтинг-эффект</li>
+              <li class="flex items-center gap-2.5"><span class="text-[#00382B]">—</span> Точечная проработка зон</li>
+              <li class="flex items-center gap-2.5"><span class="text-[#00382B]">—</span> Подтяжка и уплотнение кожи</li>
+              <li class="flex items-center gap-2.5"><span class="text-[#00382B]">—</span> Безоперационный лифтинг-эффект</li>
             </ul>
-            <div class="flex items-center justify-between border-t border-[#EDE4D8] pt-4">
-              <span class="text-[#C1876B] font-bold text-xl">от 1 100 ₽</span>
+            <div class="flex items-center justify-between border-t border-[#E5E0D8] pt-4">
+              <span class="text-[#00382B] font-display font-bold text-xl">от 1 100 ₽</span>
               <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
-                 class="bg-[#00382B] text-[#FAEBD7] hover:bg-[#00281F] rounded-full px-5 py-2.5 text-sm font-medium transition">Записаться</a>
+                 class="bg-[#00382B] text-[#FAF8F5] hover:bg-[#00281F] rounded-full px-5 py-2.5 text-sm font-medium transition">Записаться</a>
             </div>
           </div>
         </div>
@@ -199,7 +210,7 @@
   </section>
 
   <!-- ================= АБОНЕМЕНТЫ ================= -->
-  <section id="pricing" class="py-14 md:py-20 bg-[#FAEBD7]">
+  <section id="pricing" class="py-14 md:py-20 bg-[#FAF8F5]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-10 md:mb-14">
         <h2 class="font-display text-[24px] sm:text-3xl md:text-[34px] text-[#00382B] mb-3">Абонементы на LPG</h2>
@@ -208,34 +219,34 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
 
-        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-[#C1876B]/30 shadow-md hover:shadow-lg transition flex flex-col">
-          <span class="inline-block bg-[#C1876B]/15 text-[#8F4E34] border border-[#C1876B]/30 rounded-full px-3 py-1 text-xs font-semibold self-start">АБОНЕМЕНТ</span>
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-[#E5E0D8] shadow-sm hover:shadow-md transition flex flex-col">
+          <span class="inline-block bg-[#00382B]/10 text-[#00382B] border border-[#00382B]/20 font-medium rounded-full px-3 py-1 text-xs self-start">АБОНЕМЕНТ</span>
           <h3 class="font-display text-2xl mt-4 text-[#00382B]">5 сеансов LPG</h3>
           <p class="mt-3 text-[14px] text-[#78716C] leading-relaxed">Оптимальный старт: заметный лимфодренаж и тонус кожи.</p>
-          <div class="h-px bg-[#EDE4D8] my-5"></div>
+          <div class="h-px bg-[#E5E0D8] my-5"></div>
           <div class="flex items-baseline gap-2 mt-auto">
-            <span class="text-[#C1876B] font-bold font-display text-2xl">5 000</span>
+            <span class="text-[#00382B] font-display font-bold text-xl">5 000</span>
             <span class="text-[14px] text-[#78716C]">₽</span>
           </div>
-          <p class="mt-1 text-[12px] text-[#8A8580]">5 сеансов по 1 000 ₽</p>
+          <p class="mt-1 text-[12px] text-[#78716C]">5 сеансов по 1 000 ₽</p>
           <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
-             class="mt-6 bg-[#00382B] text-[#FAEBD7] hover:bg-[#00281F] rounded-full px-6 py-2.5 transition w-full text-center text-[13px] font-medium">
+             class="mt-6 bg-[#00382B] text-[#FAF8F5] hover:bg-[#00281F] rounded-full px-6 py-2.5 transition w-full text-center text-[13px] font-medium">
             Записаться
           </a>
         </div>
 
-        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-[#C1876B]/30 shadow-md hover:shadow-lg transition flex flex-col">
-          <span class="inline-block bg-[#C1876B]/15 text-[#8F4E34] border border-[#C1876B]/30 rounded-full px-3 py-1 text-xs font-semibold self-start">ПОЛНЫЙ КУРС</span>
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-[#E5E0D8] shadow-sm hover:shadow-md transition flex flex-col">
+          <span class="inline-block bg-[#00382B]/10 text-[#00382B] border border-[#00382B]/20 font-medium rounded-full px-3 py-1 text-xs self-start">ПОЛНЫЙ КУРС</span>
           <h3 class="font-display text-2xl mt-4 text-[#00382B]">10 сеансов LPG</h3>
           <p class="mt-3 text-[14px] text-[#78716C] leading-relaxed">Полный курс коррекции фигуры для стойкого результата.</p>
-          <div class="h-px bg-[#EDE4D8] my-5"></div>
+          <div class="h-px bg-[#E5E0D8] my-5"></div>
           <div class="flex items-baseline gap-2 mt-auto">
-            <span class="text-[#C1876B] font-bold font-display text-2xl">9 000</span>
+            <span class="text-[#00382B] font-display font-bold text-xl">9 000</span>
             <span class="text-[14px] text-[#78716C]">₽</span>
           </div>
-          <p class="mt-1 text-[12px] text-[#8A8580]">10 сеансов по 900 ₽</p>
+          <p class="mt-1 text-[12px] text-[#78716C]">10 сеансов по 900 ₽</p>
           <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
-             class="mt-6 bg-[#00382B] text-[#FAEBD7] hover:bg-[#00281F] rounded-full px-6 py-2.5 transition w-full text-center text-[13px] font-medium">
+             class="mt-6 bg-[#00382B] text-[#FAF8F5] hover:bg-[#00281F] rounded-full px-6 py-2.5 transition w-full text-center text-[13px] font-medium">
             Записаться
           </a>
         </div>
@@ -247,7 +258,7 @@
 </main>
 
 <!-- ================= ПОДВАЛ ================= -->
-<footer class="bg-[#00382B] text-[#FAEBD7] pt-14 pb-10">
+<footer class="bg-[#00382B] text-[#FAF8F5] pt-14 pb-10">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
     <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 items-stretch mb-12">
@@ -263,16 +274,16 @@
 
       <div class="lg:col-span-2 flex flex-col justify-between">
         <div>
-          <h2 class="font-display text-[24px] sm:text-[28px] text-[#FAEBD7] leading-tight">Ждём вас в Laser One</h2>
+          <h2 class="font-display text-[24px] sm:text-[28px] text-[#FAF8F5] leading-tight">Ждём вас в Laser One</h2>
           <p class="mt-3 text-white/65 text-sm leading-relaxed">Онлайн-запись работает круглосуточно — выберите удобное время за пару кликов.</p>
 
           <div class="mt-6 space-y-3">
             <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
-               class="block w-full text-center bg-[#FAEBD7] text-[#00382B] hover:bg-white py-3.5 px-6 rounded-full text-sm font-bold transition-colors">
+               class="block w-full text-center bg-[#FAF8F5] text-[#00382B] hover:bg-white py-3.5 px-6 rounded-full text-sm font-bold transition-colors">
               Записаться онлайн
             </a>
             <a href="tel:+74832331617"
-               class="block w-full text-center border border-white/25 text-[#FAEBD7] hover:bg-white/10 py-3.5 px-6 rounded-full text-sm font-medium transition-colors">
+               class="block w-full text-center border border-white/25 text-[#FAF8F5] hover:bg-white/10 py-3.5 px-6 rounded-full text-sm font-medium transition-colors">
               +7 (4832) 33-16-17
             </a>
           </div>
@@ -280,17 +291,17 @@
 
         <div class="mt-7 pt-6 border-t border-white/15 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
           <div class="flex items-start gap-2.5">
-            <svg class="w-4 h-4 text-[#FAEBD7]/60 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <svg class="w-4 h-4 text-[#FAF8F5]/60 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             <div>
-              <div class="text-[10px] uppercase tracking-wider text-[#FAEBD7]/55 font-semibold">Адрес</div>
-              <div class="text-[#FAEBD7] mt-0.5">Брянск, ул. Красноармейская, 41</div>
+              <div class="text-[10px] uppercase tracking-wider text-[#FAF8F5]/55 font-semibold">Адрес</div>
+              <div class="text-[#FAF8F5] mt-0.5">Брянск, ул. Красноармейская, 41</div>
             </div>
           </div>
           <div class="flex items-start gap-2.5">
-            <svg class="w-4 h-4 text-[#FAEBD7]/60 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <svg class="w-4 h-4 text-[#FAF8F5]/60 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             <div>
-              <div class="text-[10px] uppercase tracking-wider text-[#FAEBD7]/55 font-semibold">Режим работы</div>
-              <div class="text-[#FAEBD7] mt-0.5">Ежедневно 10:00–20:00</div>
+              <div class="text-[10px] uppercase tracking-wider text-[#FAF8F5]/55 font-semibold">Режим работы</div>
+              <div class="text-[#FAF8F5] mt-0.5">Ежедневно 10:00–20:00</div>
             </div>
           </div>
         </div>
@@ -299,11 +310,11 @@
 
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pt-8 border-t border-white/15">
       <div class="md:col-span-1">
-        <p class="font-display text-[14px] tracking-[.1em] text-[#FAEBD7]">LASER ONE</p>
+        <p class="font-display text-[14px] tracking-[.1em] text-[#FAF8F5]">LASER ONE</p>
         <p class="mt-3 text-[12px] leading-relaxed text-white/55">Пространство бережной эстетики и аппаратного ухода в Брянске.</p>
       </div>
       <div class="md:col-span-1">
-        <p class="text-[10.5px] uppercase tracking-[.2em] text-[#FAEBD7]/55 font-semibold">Навигация</p>
+        <p class="text-[10.5px] uppercase tracking-[.2em] text-[#FAF8F5]/55 font-semibold">Навигация</p>
         <ul class="mt-4 space-y-2.5 text-[13px]">
           <li><a href="index.html" class="text-white/70 hover:text-white transition-colors">Главная</a></li>
           <li><a href="laser.html" class="text-white/70 hover:text-white transition-colors">Лазерная эпиляция</a></li>
@@ -311,7 +322,7 @@
         </ul>
       </div>
       <div class="md:col-span-1">
-        <p class="text-[10.5px] uppercase tracking-[.2em] text-[#FAEBD7]/55 font-semibold">Контакты</p>
+        <p class="text-[10.5px] uppercase tracking-[.2em] text-[#FAF8F5]/55 font-semibold">Контакты</p>
         <ul class="mt-4 space-y-2.5 text-[13px] text-white/70">
           <li>Брянск, ул. Красноармейская, 41</li>
           <li>Ежедневно 10:00–20:00</li>
@@ -319,10 +330,10 @@
         </ul>
       </div>
       <div class="md:col-span-1">
-        <p class="text-[10.5px] uppercase tracking-[.2em] text-[#FAEBD7]/55 font-semibold">Связь</p>
+        <p class="text-[10.5px] uppercase tracking-[.2em] text-[#FAF8F5]/55 font-semibold">Связь</p>
         <div class="mt-4 space-y-2.5">
           <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
-             class="block text-center bg-[#FAEBD7] text-[#00382B] hover:bg-white py-2.5 px-4 rounded-full text-[12px] font-bold transition-colors">Запись в YClients</a>
+             class="block text-center bg-[#FAF8F5] text-[#00382B] hover:bg-white py-2.5 px-4 rounded-full text-[12px] font-bold transition-colors">Запись в YClients</a>
           <a href="tel:+74832331617"
              class="block text-center border border-white/25 hover:bg-white/10 py-2.5 px-4 rounded-full text-[12px] font-medium transition-colors">Позвонить</a>
         </div>
@@ -342,7 +353,7 @@
 </script>
 
 <!-- ================= МОБИЛЬНАЯ НИЖНЯЯ НАВИГАЦИЯ ================= -->
-<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-[#FAEBD7]/95 backdrop-blur-md border-t border-[#D9C8B8] py-2 px-4 z-50 flex justify-around items-center text-xs">
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-[#E5E0D8] py-2.5 px-4 z-50 flex justify-around items-center text-xs">
   <a href="index.html" class="flex flex-col items-center gap-1 text-[#00382B]/75 hover:text-[#00382B] transition-colors py-1 px-2 min-w-[64px]">
     <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.3"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-6h4v6a1 1 0 001 1h3a1 1 0 001-1V10"/></svg>
     <span class="text-[10px] tracking-wide">Главная</span>
@@ -356,7 +367,7 @@
     <span class="text-[10px] tracking-wide">LPG</span>
   </a>
   <a href="https://n786448.yclients.com/" target="_blank" rel="noopener noreferrer"
-     class="bg-[#00382B] text-[#FAEBD7] flex flex-col items-center gap-1 rounded-full py-1.5 px-3 min-w-[64px]">
+     class="bg-[#00382B] text-[#FAF8F5] flex flex-col items-center gap-1 rounded-full py-1.5 px-3 min-w-[64px]">
     <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.3"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
     <span class="text-[10px] tracking-wide font-semibold">Запись</span>
   </a>
